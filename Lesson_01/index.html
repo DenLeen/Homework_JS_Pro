@@ -6,40 +6,40 @@
 </head>
 <body>
 
-<p>ДЗ: Создать класс Sorter. У этого класса должен быть параметр - массив. У класса также должны быть методы:
-    1) add - добавление элементов в массив, возвращает длину массива;
-    2) length - возвращает длину массива;
-    3) sort - сортировка массива;
-    4) map - возвращает новый массив(по аналогии с стандартным методом);
-    5) filter - возвращает отфильтрованный новый массив(по аналогии с стандартным методом)
-    6) pushArray - по аналогии с методом push, только в pushArray нужно передавать другой массив, элементы которого должны быть добавлены
-</p>
+<!--<p>ДЗ: Создать класс Sorter. У этого класса должен быть параметр - массив. У класса также должны быть методы:-->
+    <!--1) add - добавление элементов в массив, возвращает длину массива;-->
+    <!--2) length - возвращает длину массива;-->
+    <!--3) sort - сортировка массива;-->
+    <!--4) map - возвращает новый массив(по аналогии с стандартным методом);-->
+    <!--5) filter - возвращает отфильтрованный новый массив(по аналогии с стандартным методом)-->
+    <!--6) pushArray - по аналогии с методом push, только в pushArray нужно передавать другой массив, элементы которого должны быть добавлены-->
+<!--</p>-->
 <script>
-    class Sorter{
-        constructor(){
-            let newArr = [];
-        }
-        addElem() {
-           let  a = new Sorter().add();
-           return a.length;
-        }
 
-        length() {
-            let b = Sorter().length;
-            return b;
-        }
-        sort() {
-            let c = Sorter().sort();
+
+
+     class Sorter {
+         constructor() {
+             this.array = [];
+         }
+         add(element) {
+             this.array[this.array.length] = element;
+             return this.array.length+1;
+         }
+         length() {
+             return this.array.length;
+         }
+         sortArr() {
+             function sort(){
+               ?????
+             }
+            return this.array.sort();
         }
         map() {
-            let d = Sorter().map();
-            return d;
+             ?????
         }
-        push() {
-            let newArray = [];
-            let f = Sorter().pushArray(newArray);
-        }
-    }
+
+     }
 </script>
 </body>
 </html>
