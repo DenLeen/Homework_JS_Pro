@@ -29,17 +29,38 @@
          length() {
              return this.array.length;
          }
-         sortArr() {
-             function sort(){
-               ?????
+         sort() {
+             function sortArr(a,b){
+                 if(a > b) {
+                     return -1;
+                 }
+                 if(a < b) {
+                     return 1;
+                 }
+                 else {
+                     return 0;
+                 }
              }
-            return this.array.sort();
+            return this.array.sortArr();
         }
         map() {
-             ?????
-        }
+             function myMap(callback) {
+                 let newArr = Object(this.array);
+                 if (this.array.length === 0) {
+                     return null;
+                 }
+                 if ( typeof (callback) === 'underfined') {
+                     return null;
+                 }
 
+                 for (let i = 0, a ; a = newArr[i]; i++) {
+                     newArr[i] = callback(a);
+                 }
+                 return newArr;
+             }
+        }
      }
 </script>
 </body>
 </html>
+
