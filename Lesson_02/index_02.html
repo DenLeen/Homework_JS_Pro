@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 1</title>
+</head>
+<body>
+<!--ДЗ: Написать функцию Parent. Ваш класс Sorter должен от нее прототипно наследоваться.-->
+<!--Функция Parent должна содержать 2 функции, valueOf и toString.-->
+<!--Эти функции должны быть неитерируемыми.-->
+
+<!--valueOf - должна возвращать длину массива.-->
+<!--toString - должна возвращать строку "Sorter".-->
+
+<!--Еще написать class, который будет наследоваться от Sorter, в этом классе должна быть одна функция,-->
+<!--которая будет возвращать новый массив из чисел принадлежащих списку чисел Фибоначи.-->
+<!--Функция эта должна быть реализована с помощью рекурсии. Числа будут браться из массива, который в классе Sorter.-->
+
+<script>
+    'use strict';
+function Parent(){
+    Parent.protot
+    valueOf: function() {
+
+    };
+    toString: function(){
+
+    };
+}
+
+    class Sorter {
+        constructor() {
+            this.array = [];
+        }
+        add(element) {
+            this.array[this.array.length] = element;
+            return this.array.length;
+        }
+        length() {
+            return this.array.length;
+        }
+        sort() {
+            function sortArr(a,b){
+                if(a > b) {
+                    return -1;
+                }
+                if(a < b) {
+                    return 1;
+                }
+                else {
+                    return 0;
+                }
+            }
+            return this.array.sortArr();
+        }
+        map() {
+            function myMap(callback) {
+                let newArr = Object(this.array);
+                if (this.array.length === 0) {
+                    return null;
+                }
+                if ( typeof (callback) === 'underfined') {
+                    return null;
+                }
+
+                for (let i = 0, a ; a = newArr[i]; i++) {
+                    newArr[i] = callback(a);
+                }
+                return newArr;
+            }
+        }
+    }
+</script>
+</body>
+</html>
+

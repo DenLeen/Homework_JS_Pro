@@ -14,53 +14,86 @@
     <!--5) filter - возвращает отфильтрованный новый массив(по аналогии с стандартным методом)-->
     <!--6) pushArray - по аналогии с методом push, только в pushArray нужно передавать другой массив, элементы которого должны быть добавлены-->
 <!--</p>-->
-<script>
-
-
+    <script>
 
      class Sorter {
          constructor() {
              this.array = [];
          }
+
          add(element) {
              this.array[this.array.length] = element;
-             return this.array.length+1;
+             return this.array.length;
          }
+
          length() {
              return this.array.length;
          }
+
          sort() {
-             function sortArr(a,b){
-                 if(a > b) {
-                     return -1;
-                 }
-                 if(a < b) {
-                     return 1;
-                 }
-                 else {
-                     return 0;
-                 }
-             }
-            return this.array.sortArr();
-        }
-        map() {
-             function myMap(callback) {
-                 let newArr = Object(this.array);
-                 if (this.array.length === 0) {
-                     return null;
-                 }
-                 if ( typeof (callback) === 'underfined') {
-                     return null;
+             function bubbleSort(arr) {
+                 if (typeof arr === 'undefined' || arr == null || !arr.length || arr.length <= 0) {
+                     return [];
                  }
 
-                 for (let i = 0, a ; a = newArr[i]; i++) {
-                     newArr[i] = callback(a);
+                 for (let i = 0; i < arr.length; i++) {
+                     for (let j = 0; j < arr.length; j++) {
+                         let temp = arr[(j - 1)];
+                         if (temp > arr[j]) {
+                             arr[(j - 1)] = arr[j];
+                             arr[j] = temp;
+                         }
+                     }
+                 }
+                 return arr;
+             }
+             return bubbleSort(this.array);
+             }
+
+         map(callback) {
+             if (typeof this.array === 'undefined' ||
+                 this.array == null ||
+                 !this.array.length ||
+                 this.array.length <= 0 ||
+                 typeof (callback) === 'undefined')
+                {
+                 return null;
+             }
+
+                 let newArr = this.array.slice();
+                 for (let i = 0, element ; element = newArr[i]; i++) {
+                     newArr[i] = callback(element);
                  }
                  return newArr;
              }
-        }
+
+         filter(callback){
+
+         }
+
+         pushArray(){
+
+         }
      }
-</script>
+
+     console.log("!!!!!!!!!!!!!!!!!");
+     const sorter = new Sorter();
+     console.log(sorter.add(1));
+     console.log(sorter.add(4));
+     console.log(sorter.add(2));
+     console.log(sorter.add("4444444"));
+     console.log(sorter.add("11"));
+
+     console.log(sorter.sort());
+
+     console.log(sorter.map(function(num) {
+         return num * 2;
+     }));
+     console.log(sorter.sort());
+
+     console.log(sorter.filter(function (currentValue) {
+         return  currentValue > 1;
+     }));
+    </script>
 </body>
 </html>
-
